@@ -6,10 +6,14 @@ interface Props {
 
 export default function MobileFrame({ children }: Props) {
   return (
-    <div className="min-h-screen w-full bg-[#050507] flex items-center justify-center md:py-8">
+    <div className="min-h-screen w-full bg-[#050507] flex items-center justify-center md:py-6">
       <div
-        className="relative w-full md:w-[390px] md:h-[844px] md:rounded-[40px] md:border md:border-bg-border md:shadow-2xl bg-bg overflow-hidden flex flex-col"
-        style={{ minHeight: '100vh' }}
+        className="
+          relative bg-bg overflow-hidden flex flex-col
+          w-full min-h-screen
+          md:w-[390px] md:h-[844px] md:min-h-0
+          md:rounded-[44px] md:border md:border-bg-border md:shadow-2xl
+        "
       >
         {children}
       </div>
