@@ -53,7 +53,13 @@ export default function SignalLikesPage() {
             {LIKED_CONTENT.map((c) => (
               <div key={c.id} className="rounded-xl overflow-hidden bg-bg-card">
                 <div className={`relative aspect-[4/5] bg-gradient-to-br ${c.gradient}`}>
-                  <div className="absolute inset-0 bg-black/10" />
+                  <img
+                    src={c.image}
+                    alt={c.title}
+                    loading="lazy"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/15 via-transparent to-black/40" />
                   <div className="absolute top-2 left-2 flex items-center gap-1 px-2 py-0.5 bg-signal-likes/90 rounded-full text-[10px] font-bold">
                     <Heart size={10} fill="white" />
                     Liked

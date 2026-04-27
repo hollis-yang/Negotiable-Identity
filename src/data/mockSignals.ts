@@ -1,12 +1,63 @@
 // Drill-down data for Signal pages (5-1, 5-2, 5-3, 5-4)
 
+const UNSPLASH = (id: string, w = 400, h = 500) =>
+  `https://images.unsplash.com/photo-${id}?w=${w}&h=${h}&fit=crop&q=80`
+
 export const LIKED_CONTENT = [
-  { id: 1, title: 'Full Body Workout', tag: 'Fitness', timeAgo: '2 days ago', gradient: 'from-orange-500 to-red-500' },
-  { id: 2, title: 'Healthy Meal Prep', tag: 'Fitness', timeAgo: '3 days ago', gradient: 'from-green-500 to-emerald-600' },
-  { id: 3, title: 'Yoga Flow', tag: 'Fitness', timeAgo: '5 days ago', gradient: 'from-purple-500 to-pink-500' },
-  { id: 4, title: 'Strength Training', tag: 'Fitness', timeAgo: '1 week ago', gradient: 'from-blue-500 to-indigo-600' },
-  { id: 5, title: 'Morning Yoga Flow', tag: 'Fitness', timeAgo: '1 week ago', gradient: 'from-pink-500 to-rose-500' },
-  { id: 6, title: 'Gymshark Lookbook', tag: 'Fitness', timeAgo: '2 weeks ago', gradient: 'from-yellow-500 to-orange-500' },
+  {
+    id: 1,
+    title: 'Full Body Workout',
+    tag: 'Fitness',
+    timeAgo: '2 days ago',
+    gradient: 'from-orange-500 to-red-500',
+    image: UNSPLASH('1571019613454-1cb2f99b2d8b'),
+  },
+  {
+    id: 2,
+    title: 'Healthy Meal Prep',
+    tag: 'Fitness',
+    timeAgo: '3 days ago',
+    gradient: 'from-green-500 to-emerald-600',
+    image: UNSPLASH('1490645935967-10de6ba17061'),
+  },
+  {
+    id: 3,
+    title: 'Yoga Flow',
+    tag: 'Fitness',
+    timeAgo: '5 days ago',
+    gradient: 'from-purple-500 to-pink-500',
+    image: UNSPLASH('1506126613408-eca07ce68773'),
+  },
+  {
+    id: 4,
+    title: 'Strength Training',
+    tag: 'Fitness',
+    timeAgo: '1 week ago',
+    gradient: 'from-blue-500 to-indigo-600',
+    image: UNSPLASH('1534438327276-14e5300c3a48'),
+  },
+  {
+    id: 5,
+    title: 'Morning Yoga Flow',
+    tag: 'Fitness',
+    timeAgo: '1 week ago',
+    gradient: 'from-pink-500 to-rose-500',
+    image: UNSPLASH('1581009146145-b5ef050c2e1e'),
+  },
+  {
+    id: 6,
+    title: 'Gymshark Lookbook',
+    tag: 'Fitness',
+    timeAgo: '2 weeks ago',
+    gradient: 'from-yellow-500 to-orange-500',
+    image: UNSPLASH('1546483875-ad9014c88eba'),
+  },
+]
+
+export const RELATED_CONTENT = [
+  { image: UNSPLASH('1599058917212-d750089bc07e', 300, 400), likes: '124' },
+  { image: UNSPLASH('1517836357463-d25dfeac3438', 300, 400), likes: '32' },
+  { image: UNSPLASH('1571019613454-1cb2f99b2d8b', 300, 400), likes: '18' },
 ]
 
 export const COMMENT_ACTIVITY = [
@@ -16,6 +67,7 @@ export const COMMENT_ACTIVITY = [
     sentiment: 'Positive',
     yourComment: 'This workout routine is exactly what I needed! Starting tomorrow.',
     onPost: 'Beginner-friendly home workout',
+    image: UNSPLASH('1571019613454-1cb2f99b2d8b', 200, 200),
   },
   {
     id: 2,
@@ -23,6 +75,7 @@ export const COMMENT_ACTIVITY = [
     sentiment: 'Positive',
     yourComment: 'Love these meal prep ideas! Can you share the recipe?',
     onPost: 'High-protein meal prep',
+    image: UNSPLASH('1490645935967-10de6ba17061', 200, 200),
   },
   {
     id: 3,
@@ -30,6 +83,7 @@ export const COMMENT_ACTIVITY = [
     sentiment: 'Neutral',
     yourComment: 'How long should this exercise last?',
     onPost: 'HIIT cardio session',
+    image: UNSPLASH('1517836357463-d25dfeac3438', 200, 200),
   },
   {
     id: 4,
@@ -37,6 +91,7 @@ export const COMMENT_ACTIVITY = [
     sentiment: 'Positive',
     yourComment: 'Finally found a HIIT class! Thanks for sharing.',
     onPost: 'Find your fitness community',
+    image: UNSPLASH('1599058917212-d750089bc07e', 200, 200),
   },
   {
     id: 5,
@@ -44,6 +99,7 @@ export const COMMENT_ACTIVITY = [
     sentiment: 'Positive',
     yourComment: 'Perfect form demonstration! This helped me correct my technique.',
     onPost: 'Squat form breakdown',
+    image: UNSPLASH('1534438327276-14e5300c3a48', 200, 200),
   },
 ]
 

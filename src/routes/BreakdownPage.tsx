@@ -21,6 +21,7 @@ import IconBadge from '../components/ui/IconBadge'
 import ProgressBar from '../components/charts/ProgressBar'
 import GradientButton from '../components/ui/GradientButton'
 import { SIGNAL_BREAKDOWN } from '../data/mockProfile'
+import { RELATED_CONTENT } from '../data/mockSignals'
 import { useInterests } from '../InterestsContext'
 import type { InterestId, SignalKey } from '../types'
 
@@ -37,12 +38,6 @@ const SIGNAL_ICON: Record<SignalKey, React.ReactNode> = {
   social: <Users size={20} />,
   negative: <ThumbsDown size={20} />,
 }
-
-const RELATED = [
-  { gradient: 'from-orange-500 to-red-500', likes: '124' },
-  { gradient: 'from-emerald-500 to-teal-600', likes: '32' },
-  { gradient: 'from-purple-500 to-pink-500', likes: '18' },
-]
 
 export default function BreakdownPage() {
   const { interestId = 'fitness' } = useParams<{ interestId: InterestId }>()
@@ -107,12 +102,15 @@ export default function BreakdownPage() {
         <div>
           <h3 className="font-semibold mb-3 px-1">Related Content</h3>
           <div className="grid grid-cols-3 gap-2">
-            {RELATED.map((r, i) => (
-              <div
-                key={i}
-                className={`relative aspect-[3/4] rounded-xl bg-gradient-to-br ${r.gradient} overflow-hidden`}
-              >
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+            {RELATED_CONTENT.map((r, i) => (
+              <div key={i} className="relative aspect-[3/4] rounded-xl overflow-hidden bg-bg-card">
+                <img
+                  src={r.image}
+                  alt=""
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/10" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <Play size={28} fill="white" className="drop-shadow-lg" />
                 </div>

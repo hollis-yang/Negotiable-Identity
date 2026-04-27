@@ -57,8 +57,18 @@ export default function SignalCommentsPage() {
                   <span className="text-[11px] text-white/50">{c.timeAgo}</span>
                   <Pill color={sentimentColor(c.sentiment)}>{c.sentiment}</Pill>
                 </div>
-                <p className="text-sm text-white/90 mb-1.5">"{c.yourComment}"</p>
-                <div className="text-[11px] text-white/45">on: {c.onPost}</div>
+                <div className="flex gap-3">
+                  <img
+                    src={c.image}
+                    alt=""
+                    loading="lazy"
+                    className="w-14 h-14 rounded-lg object-cover shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <p className="text-sm text-white/90 mb-1 line-clamp-2">"{c.yourComment}"</p>
+                    <div className="text-[11px] text-white/45">on: {c.onPost}</div>
+                  </div>
+                </div>
               </Card>
             ))}
           </div>
